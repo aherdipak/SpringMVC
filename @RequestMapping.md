@@ -1,1 +1,40 @@
 
+## @RequestMapping in SpringMVC
+
+- class level
+
+### \HomeController.java
+```
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+@RequestMapping("great") //class lavel 
+public class HomeController {
+
+	@RequestMapping("/welcome.htm")
+	public ModelAndView welcomePage() {
+		ModelAndView modelAndView = new ModelAndView("welcome");
+		modelAndView.addObject("welcomeMsg", "welcome to my first SpringMVC Application Based on Annotation");
+		return modelAndView;
+	}
+	
+	@RequestMapping("/hi.htm")
+	public ModelAndView hiWorld() {
+		ModelAndView modelAndView = new ModelAndView("welcome");
+		modelAndView.addObject("welcomeMsg", "hi World");
+		return modelAndView;
+	}
+
+} 
+```
+### Call above controller using following url's 
+
+`http://localhost:8080/FirstMVC/great/welcome.htm`
+`http://localhost:8080/FirstMVC/great/hi.htm`
+
+
+
+
+
