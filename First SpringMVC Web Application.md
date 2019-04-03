@@ -1,6 +1,7 @@
 
-# Creating SpringMVC Web Application using Eclipse IDE
-- Step 1: Create a Web Project
+## Creating SpringMVC Web Application using Eclipse IDE
+### Step 1: Create a Web Project
+
 Using Eclipse IDE, create a Web Project.
 
 
