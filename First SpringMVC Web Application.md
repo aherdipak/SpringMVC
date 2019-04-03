@@ -66,7 +66,7 @@ create spring-servlet.xml on the same location of web.xml
 
 create controller class 
 
-### \HomeController.xml
+### \HomeController.java
 ```
 
 package com.controller;
@@ -185,7 +185,7 @@ create spring-servlet.xml on the same location of web.xml
 
 create controller class 
 
-### \HomeController.xml
+### \HomeController.java
 ```
 
 package com.controller;
