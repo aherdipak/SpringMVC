@@ -94,7 +94,7 @@ public class HomeController extends AbstractController {
 
 ### Step 5: create JSP page
 
-create Jsp page for showing result on browser 
+create Jsp page on location `/WEB-INF/views/welcome.jsp` for showing result on browser 
 
 ### \welcome.jsp
 ```
@@ -212,7 +212,7 @@ public class HomeController {
 
 ### Step 5: create JSP page
 
-create Jsp page for showing result on browser 
+create Jsp page on location `/WEB-INF/views/welcome.jsp` for showing result on browser  
 
 ### \welcome.jsp
 ```
