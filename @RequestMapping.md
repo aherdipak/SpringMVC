@@ -31,7 +31,7 @@ public class HomeController {
 ```
 ### Call above controller using following url's 
 
-`http://localhost:8080/FirstMVC/great/welcome.htm`
+`http://localhost:8080/FirstMVC/great/welcome.htm`  And 
 `http://localhost:8080/FirstMVC/great/hi.htm`
 
 
