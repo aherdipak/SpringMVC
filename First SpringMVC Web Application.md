@@ -1,5 +1,5 @@
 
-# First spring mvc application
+# Creating first Spring MVC Web Application using Eclipse IDE.md
 - How to create springMVC application?
 
 
