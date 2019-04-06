@@ -2,6 +2,7 @@ package com.dac.beans;
 
 public class Student {
 
+	
 	private String studentName,studentHobby;
 
 	public String getStudentName() {
