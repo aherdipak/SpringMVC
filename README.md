@@ -23,4 +23,4 @@ You will learn about
 
 ## Step wise details
 
-* 1.First SpringMVC Web Application.md : Creating SpringMVC Web Application
+* 1. First SpringMVC Web Application.md : Creating SpringMVC Web Application
