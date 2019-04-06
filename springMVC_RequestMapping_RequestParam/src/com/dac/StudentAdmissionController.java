@@ -10,6 +10,8 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class StudentAdmissionController {
 
+	
+	
 	@RequestMapping(value="/admissionForm.html",method=RequestMethod.GET)
 	public ModelAndView getAdmissionForm()
 	{
