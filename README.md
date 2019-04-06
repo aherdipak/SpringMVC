@@ -13,3 +13,10 @@ You will learn about
 - Basic REST Services
 
 
+## Download
+
+* Spring libraries. 
+  - http://repo.spring.io/release/org/springframework/spring/
+  
+* Spring Restful libraries.
+  - http://repo1.maven.org/maven2/com/fasterxml/jackson/core/
