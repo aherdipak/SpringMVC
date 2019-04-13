@@ -56,5 +56,11 @@ Let spring MVC know about this class for that go to the spring configuration fil
 
 ## Interceptor 02 ( more on understanding basics of it...)
 
+`HandlerInterceptorAdapter` provide anather two methods:
+```markdown
 
+1. postHandle
+2. afterCompletion
+
+```
 
