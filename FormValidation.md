@@ -189,3 +189,15 @@ This feature may degrade the performance of an application that's why not recomm
 private String studentName;
 
 ```
+
+### Question 1: 
+#### Student date of birth`(dob)` is not fall in feture i.e Feture date not allowed in dob field?
+With @Past annoation, we simply instructing spring mvc framework whenever you are performing data binding task for dob property and the value which you are binding with it falling in future that time simply treat as a binding error.
+
+#### /Student.java
+```
+@Past
+private Date dob;
+    
+```
+
