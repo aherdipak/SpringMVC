@@ -238,3 +238,52 @@ For this requirment, there is not a predefined annotation to achieve this type o
   (HobbyValidation.java)
   
   ````
+  
+ ### /HobbyValidator.java
+ ```
+public class HobbyValidator implements ConstraintValidator<IsValidHobby, String>{
+
+	public void initialize(IsValidHobby isValidHobby) {
+		
+	}
+	
+	public boolean isValid(String studentHobby, ConstraintValidatorContext ctx) {
+		
+		if(studentHobby == null) {
+			return false;
+		}
+		
+		if(studentHobby.matches("Music|Football|Cricket|Hockey")) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+} 
+```
+
+ ### /IsValidHobby.java
+ 
+ ```
+ 
+@Documented
+@Constraint(validatedBy = HobbyValidator.class)
+@Target({ElementType.FIELD})
+@Retention(RetentionPolicy.RUNTIME)
+public @interface IsValidHobby {
+	
+	String message() default "Please provide a valid Hobby; "+
+	"accepted hobbies are - Music, Football, Cricket and Hockey (choose anyone)";
+	 Class<?>[] groups() default {};
+	 Class <? extends Payload>[] payload() default {};
+
+}
+
+ ```
+ ### /Student.java
+ ```
+ 
+@Size(min=2,max=30) @IsValidHobby
+private String studenthobby;
+
+ ```
