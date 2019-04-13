@@ -60,3 +60,7 @@ Update jsp page with following lines of code to show error messages return by sp
  <form:errors path="student.*"/> . <!-- Just before starting form Tag -->
  
 ```
+
+## Form Validation 02 (customizing error messages using Spring MessageSource)
+
+### Question 1: 
