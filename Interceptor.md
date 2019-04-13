@@ -54,7 +54,7 @@ Let spring MVC know about this class for that go to the spring configuration fil
 </mvc:interceptors>
 ```
 
-
+## Interceptor 02 ( more on understanding basics of it...)
 
 
 
