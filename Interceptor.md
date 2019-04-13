@@ -85,9 +85,9 @@ System.out.println("HandlerInterceptorAdaptor :  Spring MVC called afterCompleti
 ### Question 2: 
 
 ```
-	<mvc:interceptors>
+<mvc:interceptors>
 	<bean class="com.controller.DayOfWeekBaseAccessInterceptor"></bean>
-	</mvc:interceptors>
+</mvc:interceptors>
 ```
  Here,I am simply instructing spring mvc application hey spring in this application i have included class with the name `com.controller.DayOfWeekBaseAccessInterceptor` so please considar this class while you handle or process any/evey request of this application.
  
@@ -95,3 +95,13 @@ System.out.println("HandlerInterceptorAdaptor :  Spring MVC called afterCompleti
  
  ##### What if I want here is this application should consider this interceptor class only for   `"/getStudentAdmissionFormPage.htm"` this url not for other url request.
 ##### How would we do it?
+
+##### /dispatcher-servlet.xml
+```
+<mvc:interceptors>
+	<mvc:interceptor>
+		<mvc:mapping path="/getStudentAdmissionFormPage.htm" />
+		<bean class="com.dac.interceptor.DayOfWeekBaseAccessInterceptor"></bean>
+	</mvc:interceptor>
+</mvc:interceptors>
+```
