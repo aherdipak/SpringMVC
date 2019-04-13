@@ -1,7 +1,9 @@
 ### Requirement:
 
 If user pass alphabets to date field then springMVC fail to process this input.
-and it gives 404:The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).
+and it gives 404:The server cannot or will not process the request due to something that is perceived to be a client error.
+
+(e.g. malformed request syntax, invalid request message framing, or deceptive request routing).
 
 ##### So how developer deals with such situations,any DataBinding errors occurse at runtime?
 
