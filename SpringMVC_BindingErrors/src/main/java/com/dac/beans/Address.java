@@ -5,6 +5,7 @@ public class Address {
 	private String country,city,street;
 	private int pincode;
 	
+	
 	public String getCountry() {
 		return country;
 	}
