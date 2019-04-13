@@ -56,7 +56,7 @@ Let spring MVC know about this class for that go to the spring configuration fil
 
 ## Interceptor 02 ( more on understanding basics of it...)
 
-`HandlerInterceptorAdapter` provide anather two methods:
+`HandlerInterceptorAdapter` provides anather two methods:
 ```markdown
 
 1. postHandle
@@ -64,3 +64,34 @@ Let spring MVC know about this class for that go to the spring configuration fil
 
 ```
 
+### Question 1: 
+#### When i would make any request to the application and `preHandle()` method returns true and then while processing that request this application should print `"Spring MVC made a call to postHandle method for a webpage request"` message on console and this `"Spring mvc made a call to afterCompletion methid for a webpage request"` message after the view file producess the for that request?
+
+#### /DayOfWeekBaseAccessInterceptor.java
+```
+@Override
+public void postHandle(HttpServletRequest req,HttpServletResponse resp,Object handler,ModelAndView model) throws Exception {
+	// this method would be called after spring mvc executes the request handler method for the request.
+	System.out.println("HandlerInterceptorAdaptor :  Spring MVC called postHandle method for "+ req.getRequestURI().toString());
+}
+	
+@Override
+public void afterCompletion(HttpServletRequest req,HttpServletResponse resp,Object handler,Exception ex)throws Exception {
+ // this method would be called after the request object is produced by the view for the request.
+System.out.println("HandlerInterceptorAdaptor :  Spring MVC called afterCompletion method for "+ req.getRequestURI().toString());
+}
+```
+
+### Question 2: 
+
+```
+	<mvc:interceptors>
+	<bean class="com.controller.DayOfWeekBaseAccessInterceptor"></bean>
+	</mvc:interceptors>
+```
+ Here,I am simply instructing spring mvc application hey spring in this application i have included class with the name `com.controller.DayOfWeekBaseAccessInterceptor` so please considar this class while you handle or process any/evey request of this application.
+ 
+ Above Interceptor class executes every request of spring mvc application.
+ 
+ ##### What if I want here is this application should consider this interceptor class only for   `"/getStudentAdmissionFormPage.htm"` this url not for other url request.
+##### How would we do it?
