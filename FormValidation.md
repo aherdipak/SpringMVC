@@ -65,4 +65,59 @@ Update jsp page with following lines of code to show error messages return by sp
 
 ### Question 1: 
 #### If user voilates form validation rule sprin MVC return from the back with default error messages, it's not so user-friendly. What if we want to display error msg more user-friendly like: "Please enter a value for student hobby filed between 2 and 30 characters".
-#### so would you do it?
+#### how would you do it?
+
+### /Student.java
+```
+@Size(min=2,max=30,message="Please enter a value for studenthobby filed between 2 and 30 charector") 
+ private String studenthobby;
+```
+In the above case value 2 and 30 in errormsg are hardcoded to make them dynamic.
+```
+@Size(min=2,max=30,message="Please enter a value for studenthobby filed between {min} and {max} charector")
+
+```
+
+### Question 2: 
+#### Now my requirement is I don't want to keep my error messages in class. I want to keep all error messages in the separate properties file?
+
+#### /spring-servlet.xml
+
+```
+<bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+			<property name="basename" value="/WEB-INF/studentmessage"></property>
+	</bean>
+	
+```
+
+#### /studentmessage.properties
+
+```
+Size.student.studenthobby = Please enter a value for studenthobby filed between 2 and 30 charector
+
+```
+##### Some important point's
+
+```markdown
+ 1. Spring mvc search for a key matching with this key pattern -
+ [Validation Annotation Name].[Object Reference Name].[Field Name]
+ e.g In this case,Size.student.studenthobby
+
+ 2. If above key pattern not found,then Spring MVC would again search for a key matching with this key
+ [Validation Annaotation Name].[Field Name]
+ e.g In this case,Size.studenthobby
+
+ 3. If above key pattern not found, then Spring mvc would again search for a key matching with this key
+ [Validation Annaotation Name].[Field Type]
+ e.g In this case,Size.java.lang.String
+ 
+ 4. if above kay pattern not found , then Spring mvc would finally search for a key matching with this key
+ [Validation Annaotation Name]
+ e.g In this case,Size
+ 
+  5. if above key also not found,then Spring mvc would use the default error message for that
+ constraint violation 
+ e.g In this case,must be between 2 and 30 (default error message for Size constraint)
+ 
+```
