@@ -9,6 +9,7 @@ public class HobbyParameterValidator implements ConstraintValidator<IsValidParam
 	//OR IF WE WANT STRING THEN DECLARE STRING AS A DATATYPE
 	private String listOfValidHobbies;
 	
+	
 	public void initialize(IsValidParameterHobby isValidHobby) {
 		this.listOfValidHobbies = isValidHobby.listOfValidHobbies();
 	}
