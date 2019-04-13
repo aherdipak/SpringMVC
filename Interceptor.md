@@ -48,11 +48,10 @@ If method returns false the application would not handle/proceess that request f
 Let spring MVC know about this class for that go to the spring configuration file(spring-servlet.xml) and put following code snippet.
 
 ```
-<!-- here i am simply instructing spring mvc application hey spring in this application i have included class with the name com.controller.DayOfWeekBaseAccessInterceptor 
-	 so please considor this class while you handle or process any request-->
-	<mvc:interceptors>
+<!-- here i am simply instructing spring mvc application hey spring in this application i have included class with the name com.controller.DayOfWeekBaseAccessInterceptor so please considor this class while you handle or process any request-->
+<mvc:interceptors>
 	<bean class="com.controller.DayOfWeekBaseAccessInterceptor"></bean>
-	</mvc:interceptors>
+</mvc:interceptors>
 ```
 
 
