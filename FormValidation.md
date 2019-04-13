@@ -287,3 +287,54 @@ public @interface IsValidHobby {
 private String studenthobby;
 
  ```
+ ### Question 2: 
+ #### If we observe some of the biuld in annoation acceptes parameter e.g @Size(min=2,max=30), How i would pass parameter to custamise annotation?
+ @IsValidParameterHobby(listOfValidHobbies="Music|Football|Cricket|Hockey")
+ 
+ #### /HobbyParameterValidator.java
+ ```
+ 
+public class HobbyParameterValidator implements ConstraintValidator<IsValidParameterHobby, String>{
+
+	// IF WE WANT ANNOTATION ACCEPT INT PARAMETER THEN DECLARE INT AS DATATYPE HERE,
+	//OR IF WE WANT STRING THEN DECLARE STRING AS A DATATYPE
+	private String listOfValidHobbies;
+	
+	public void initialize(IsValidParameterHobby isValidHobby) {
+		this.listOfValidHobbies = isValidHobby.listOfValidHobbies();
+	}
+	
+	public boolean isValid(String studentHobby, ConstraintValidatorContext ctx) {
+		
+		if(studentHobby == null) {
+			return false;
+		}
+		
+		if(studentHobby.matches(listOfValidHobbies)) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+}
+ ```
+ 
+  #### /IsValidParameterHobby.java
+ ```
+@Documented
+@Constraint(validatedBy = HobbyParameterValidator.class)
+@Target({ElementType.FIELD})
+@Retention(RetentionPolicy.RUNTIME)
+public @interface IsValidParameterHobby {
+	
+	// IF WE WANT ANNOTATION ACCEPT INT PARAMETER THEN DECLARE INT AS DATATYPE HERE,
+	//OR IF WE WANT STRING THEN DECLARE STRING AS A DATATYPE
+	String listOfValidHobbies();
+	
+	String message() default "Please provide a valid Hobby; "+
+	"accepted hobbies are - Music, Football, Cricket and Hockey (choose anyone)";
+	 Class<?>[] groups() default {};
+	 Class <? extends Payload>[] payload() default {};
+
+}
+ ```
