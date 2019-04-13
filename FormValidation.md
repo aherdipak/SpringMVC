@@ -3,7 +3,12 @@
 ### Question 1: 
 #### Whatever value provided in student hobby field that values minimum length of 2 char and never exceeds 30 char and user violates this rule at a time of submitting the form then my spring application return same form back to the client with complete description of the violated rule, How to achieve such things?
 
+we are using hibernate-validator in this example.
+
 ### /pom.xml
+
+Update pom.xml file with `hibernate-validator`jars
+
 ```
  <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
 	<dependency>
