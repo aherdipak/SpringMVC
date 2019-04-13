@@ -177,3 +177,15 @@ After changes in properties file every time we have to restart the server to loa
 ```
 Spring MVC will load all changes done in this file will load after every one Second.
 This feature may degrade the performance of an application that's why not recommended in production areas, used in the only developer environment.
+
+## Form Validations 04 (@Pattern, @Past, @Max and some more...)
+
+### Question 1: 
+#### Degit not allowed in `studentName`?
+
+#### /Student.java
+```
+@Pattern(regexp="[^0-9]*")
+private String studentName;
+
+```
