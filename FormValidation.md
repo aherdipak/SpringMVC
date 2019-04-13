@@ -201,7 +201,7 @@ private Date dob;
     
 ```
 
-### Question 2: 
+### Question 3: 
 #### `<= 2222` value in mobile number field? if user give 2224 then my appliaction return back form with error msg.
 
 #### /Student.java
@@ -215,3 +215,10 @@ private Date dob;
     @Min : check that the annoation value is higher than or equals the specified minimum.
     @NotNull : check that the annoation value is not null.
     @NotEmpty : chekc if the string is not null nor empty(is not supported by bean validation specification ... its only available to devepers if they are using hibernate validation lib in thier spring appliaction) 
+
+## Form Validations 04 ( writing a custom Form Validation annotation )
+
+### Question 1: 
+What ever value provided by the user in student hobby filed ia must be a hobby mean's which would mach any of this given vaue Music, Football, Cricket, Hockey 
+Provided value is not from any of these value then application simply return the same form back to the user with error messages.
+For this requirment, there is not a predefined annotation to achieve this type of requirement for that we have to create our own custom validation.
