@@ -222,3 +222,15 @@ private Date dob;
 What ever value provided by the user in student hobby filed ia must be a hobby mean's which would mach any of this given vaue Music, Football, Cricket, Hockey 
 Provided value is not from any of these value then application simply return the same form back to the user with error messages.
 For this requirment, there is not a predefined annotation to achieve this type of requirement for that we have to create our own custom validation.
+
+
+####  I will create a custom form validation annotation with the name - `isValidHobby`
+ 
+##### Steps to create a custom form validation annotation :
+
+```markdown
+  1.Create a java file(called as an annotation type or simply an interface ) - having a complete definition of this custom         annotation like the name of the custom annoation, the default error messages information etc.
+
+  2.Create a java file(a class) - having the validation logic used by this custom annotation to validate in the input.
+  
+  ````
