@@ -338,3 +338,40 @@ public @interface IsValidParameterHobby {
 
 }
  ```
+
+ ### Question 3: 
+ #### If we remove the parameter from this annotation it showing up error what if I wanted to the optional parameter to this annotation?
+If developers provide this `@IsValidHobby(listOfValidHobbies=" Music|Football|Cricket|Hockey")` set of parameter then the application should use this set of hobbies for validating the user inputs otherwise It should be some default values of hobbies with this annotation far validating the user input?
+
+#### /IsValidParameterHobby.java
+```
+
+@Documented
+@Constraint(validatedBy = HobbyParameterValidator.class)
+@Target({ElementType.FIELD})
+@Retention(RetentionPolicy.RUNTIME)
+public @interface IsValidParameterHobby {
+	
+	
+	// IF WE WANT ANNOTATION ACCEPT INT PARAMETER THEN DECLARE INT AS DATATYPE HERE,
+	//OR IF WE WANT STRING THEN DECLARE STRING AS A DATATYPE
+	
+	String listOfValidHobbies() default "Music|Football|Cricket|Hockey";
+	
+	String message() default "Please provide a valid Hobby; "+
+	"accepted hobbies are - Music, Football, Cricket and Hockey (choose anyone)";
+	 Class<?>[] groups() default {};
+	 Class <? extends Payload>[] payload() default {};
+
+}
+```
+#### /Student.java
+
+```
+	//@IsValidParameterHobby(listOfValidHobbies = "Music|Football|Cricket|Hockey")
+	/* OR */
+	@IsValidParameterHobby()
+	
+	private String studenthobby;
+	
+```
