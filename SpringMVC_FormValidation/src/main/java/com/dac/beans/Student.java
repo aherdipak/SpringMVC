@@ -8,6 +8,7 @@ import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
 import com.dac.custom.validation.IsValidHobby;
+import com.dac.custom.validation.IsValidParameterHobby;
 
 public class Student {
 
@@ -29,7 +30,9 @@ public class Student {
 	// for studenthobby field and the value which is bing with it 
 	// value having less than 2 and more than 30 then you simply treat that as data binding error and put that into Databiding error ref
 	// To activate this annotation you have put @Valid annotation in controller before @ModelAttribute
-	@IsValidHobby
+	
+	//@IsValidHobby
+	@IsValidParameterHobby(listOfValidHobbies = "Music|Football|Cricket|Hockey")
 	private String studenthobby;
 	
 	
