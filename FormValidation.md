@@ -210,3 +210,8 @@ private Date dob;
  private Long mobileNumber;
 	
 ```
+ #### IN SIILAR MANNER
+    @Future : checks whether the annoation date is in the future 
+    @Min : check that the annoation value is higher than or equals the specified minimum.
+    @NotNull : check that the annoation value is not null.
+    @NotEmpty : chekc if the string is not null nor empty(is not supported by bean validation specification ... its only available to devepers if they are using hibernate validation lib in thier spring appliaction) 
