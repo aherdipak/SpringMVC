@@ -14,6 +14,7 @@ public class HobbyParameterValidator implements ConstraintValidator<IsValidParam
 		this.listOfValidHobbies = isValidHobby.listOfValidHobbies();
 	}
 	
+	
 	public boolean isValid(String studentHobby, ConstraintValidatorContext ctx) {
 		
 		if(studentHobby == null) {

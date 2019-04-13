@@ -36,7 +36,7 @@ public class Student {
 	private String studenthobby;
 	
 	
-	 @Max(2222)
+	@Max(2222)
 	private Long mobileNumber;
 	
 	@Past
