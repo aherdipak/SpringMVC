@@ -19,7 +19,7 @@ public @interface IsValidParameterHobby {
 	// IF WE WANT ANNOTATION ACCEPT INT PARAMETER THEN DECLARE INT AS DATATYPE HERE,
 	//OR IF WE WANT STRING THEN DECLARE STRING AS A DATATYPE
 	
-	String listOfValidHobbies();
+	String listOfValidHobbies() default "Music|Football|Cricket|Hockey";
 	
 	String message() default "Please provide a valid Hobby; "+
 	"accepted hobbies are - Music, Football, Cricket and Hockey (choose anyone)";

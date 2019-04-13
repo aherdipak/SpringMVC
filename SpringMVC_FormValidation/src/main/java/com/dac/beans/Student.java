@@ -32,7 +32,8 @@ public class Student {
 	// To activate this annotation you have put @Valid annotation in controller before @ModelAttribute
 	
 	//@IsValidHobby
-	@IsValidParameterHobby(listOfValidHobbies = "Music|Football|Cricket|Hockey")
+	//@IsValidParameterHobby(listOfValidHobbies = "Music|Football|Cricket|Hockey")
+	@IsValidParameterHobby()
 	private String studenthobby;
 	
 	
