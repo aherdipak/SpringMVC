@@ -344,6 +344,9 @@ public @interface IsValidParameterHobby {
 If developers provide this `@IsValidHobby(listOfValidHobbies=" Music|Football|Cricket|Hockey")` set of parameter then the application should use this set of hobbies for validating the user inputs otherwise It should be some default values of hobbies with this annotation far validating the user input?
 
 #### /IsValidParameterHobby.java
+
+default "Music|Football|Cricket|Hockey";
+
 ```
 
 @Documented
