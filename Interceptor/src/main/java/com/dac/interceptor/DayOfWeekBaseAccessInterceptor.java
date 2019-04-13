@@ -18,7 +18,7 @@ public class DayOfWeekBaseAccessInterceptor extends HandlerInterceptorAdapter {
 		
 		Calendar cal =Calendar.getInstance();
 		int dayOfWeek = cal.get(cal.DAY_OF_WEEK);      // getting the day on which request is made
-		if(dayOfWeek == 1) {                           // 1 means Sunday,2 means Monday .... 7 means Saturday
+		if(dayOfWeek == 2) {                           // 1 means Sunday,2 means Monday .... 7 means Saturday
 			resp.getWriter().write("The website is closed on Sunday; Please try accessing it" +
 					" on any other week day!!!");
 			return false;

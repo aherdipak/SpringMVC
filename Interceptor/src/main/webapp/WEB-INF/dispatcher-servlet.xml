@@ -14,6 +14,19 @@
 	<context:component-scan base-package="com.dac.*"/>
 	<mvc:annotation-driven/>
 	
+	<!-- here i am simply instructing spring mvc application hey spring in this application i have included class with the name com.controller.DayOfWeekBaseAccessInterceptor 
+	 so please considor this class while you handle or process any request-->
+	<!-- <mvc:interceptors>
+		<bean class="com.dac.interceptor.DayOfWeekBaseAccessInterceptor"></bean>
+	</mvc:interceptors> -->
+	
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/getStudentAdmissionFormPage.htm" />
+			<bean class="com.dac.interceptor.DayOfWeekBaseAccessInterceptor"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
+
 	
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -30,10 +43,6 @@
 			<property name="cacheSeconds" value="1" />
 	</bean> 
 	
-	<!-- here i am simply instructing spring mvc application hey spring in this application i have included class with the name com.controller.DayOfWeekBaseAccessInterceptor 
-	 so please considor this class while you handle or process any request-->
-	<mvc:interceptors>
-		<bean class="com.dac.interceptor.DayOfWeekBaseAccessInterceptor"></bean>
-	</mvc:interceptors>
+	
 	
 </beans>
