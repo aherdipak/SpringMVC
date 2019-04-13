@@ -64,3 +64,5 @@ Update jsp page with following lines of code to show error messages return by sp
 ## Form Validation 02 (customizing error messages using Spring MessageSource)
 
 ### Question 1: 
+#### If user voilates form validation rule sprin MVC return from the back with default error messages, it's not so user-friendly. What if we want to display error msg more user-friendly like: "Please enter a value for student hobby filed between 2 and 30 characters".
+#### so would you do it?
