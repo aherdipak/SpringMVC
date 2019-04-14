@@ -137,3 +137,8 @@ Every browser has a language preference setting feature provided in it e.g chrom
 Setting --> languages and input settings --> here if the user has provided frensh as a preferred language over English,
 then the content of the webpage will be shown in French.
 If he has provided English then the content of the webpage in the English language.
+
+#### form in French language
+
+![image](https://user-images.githubusercontent.com/35020560/56094795-088cff00-5ef4-11e9-9454-fa2439759e22.png)
+
