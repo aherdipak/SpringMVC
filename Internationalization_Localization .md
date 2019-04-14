@@ -138,11 +138,11 @@ Setting --> languages and input settings --> here if the user has provided frens
 then the content of the webpage will be shown in French.
 If he has provided English then the content of the webpage in the English language.
 
-#### Form view in French language
+#### Form view in French language : 
 
 ![image](https://user-images.githubusercontent.com/35020560/56094795-088cff00-5ef4-11e9-9454-fa2439759e22.png)
 
 
-#### Form view in English language
+#### Form view in English language : 
 
 ![image](https://user-images.githubusercontent.com/35020560/56094830-5ace2000-5ef4-11e9-94a9-29a9529b880e.png)
