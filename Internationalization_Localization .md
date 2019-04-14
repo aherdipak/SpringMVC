@@ -146,3 +146,11 @@ If he has provided English then the content of the webpage in the English langua
 #### Form view in English language : 
 
 ![image](https://user-images.githubusercontent.com/35020560/56094830-5ace2000-5ef4-11e9-94a9-29a9529b880e.png)
+
+### Question 2:
+
+#####  What if the user wants to change to the language of the webpage without changing the language performance of the webpage.
+
+#### So how would you do it?
+
+
