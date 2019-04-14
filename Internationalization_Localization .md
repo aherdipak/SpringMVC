@@ -152,4 +152,12 @@ If he has provided English then the content of the webpage in the English langua
 #####  What if the user wants to change to the language of the webpage without changing the language performance of the webpage.
 ##### So how would you do it?
 
+#### STEPS
+
+```markdown
+1. include two links : English and french on top of the admission form.
+2. Register an interceptor with the name localeChangeInterceptor in the Spring configuration file.
+3. include an entry of cookieLocaleResolver bean in the spring's configuration file.```
+
+```
 
