@@ -131,3 +131,9 @@ label.pinCode = Code PIN étudiant:
 		return modelAndView;
 	}
 ```
+
+Every browser has a language preference setting feature provided in it e.g chrome 
+
+Setting --> languages and input settings --> here if the user has provided frensh as a preferred language over English,
+then the content of the webpage will be shown in French.
+If he has provided English then the content of the webpage in the English language.
