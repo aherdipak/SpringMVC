@@ -2,6 +2,8 @@
 
 Internationalization - The process of creating or developing a web application in such a generic manner that which can handle or support more than one language is known as Internationalization.
 
+### Question 1: 
+
 #### What if 50% of visitors of this demo application want ot view this webpage in English and the remaining 50% in french, So how to make this application support multiple languages?
 
 ##### /admissionForm.jsp
