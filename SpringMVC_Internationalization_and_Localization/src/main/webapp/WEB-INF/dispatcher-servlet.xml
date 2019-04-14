@@ -27,14 +27,13 @@
         </mvc:interceptor>
     </mvc:interceptors>
  
-   
-    
     
     <!-- when you user LocaleChangeInterceptor then its an mendatory to put an entry of CookieLocaleResolver bean in config file otherwise its wont work -->
 	 <!-- Cookie Resolver -->
     <bean id="localeResolver"
         class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
     </bean>
+	
 	
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">

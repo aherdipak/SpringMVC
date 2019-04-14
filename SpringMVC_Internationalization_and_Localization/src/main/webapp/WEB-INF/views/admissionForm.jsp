@@ -7,6 +7,7 @@
 </head>
 <body>
 
+
 <!-- if i click on this link this webpage again request for it self and along with that request it sends parameter name siteLanguage to the server-->
 <a href="./getAdmissionFormPage.htm?siteLanguage=en">English</a> |
 <a href="./getAdmissionFormPage.htm?siteLanguage=fr">French</a>
