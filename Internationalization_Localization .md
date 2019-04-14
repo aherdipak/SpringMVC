@@ -157,7 +157,41 @@ If he has provided English then the content of the webpage in the English langua
 ```markdown
 1. include two links : English and french on top of the admission form.
 2. Register an interceptor with the name localeChangeInterceptor in the Spring configuration file.
-3. include an entry of cookieLocaleResolver bean in the spring's configuration file.```
+3. include an entry of cookieLocaleResolver bean in the spring's configuration file.
 
 ```
 
+#### /admissionForm.jsp
+
+add links on page.
+```
+<a href="/FirstMVC/getStudentAdmissionFormPage.htm?siteLanguage=en">English</a> |
+<a href="/FirstMVC/getStudentAdmissionFormPage.htm?siteLanguage=fr">French</a>
+```
+
+#### /dispatcher-servlet.xml
+```
+<!-- Before processing request this LocaleChangeInterceptor exstracts the value of this  siteLanguage parameter and accordingly informs the application to pick appropriates properties files while preparing the responce obj -->
+	
+ <!-- Locale Change Interceptor to achieve internationalization. -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/getAdmissionFormPage.htm" />
+            <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+                <property name="paramName" value="siteLanguage"></property>
+            </bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
+    
+    
+<!-- when you user LocaleChangeInterceptor then its an mendatory to put an entry of CookieLocaleResolver bean in config file otherwise it wont work -->
+<!-- Cookie Resolver -->
+    <bean id="localeResolver"
+        class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+    </bean>
+```
+
+When I click on any of these link this webpage again request for itself and along with that request it sends parameter name `siteLanguage` to the server.
+
+Before processing the request, `LocaleChangeInterceptor` extracts the value of  parameter `siteLanguage`
+and accordingly informs the application to pick appropriates properties file while framing the response object.
