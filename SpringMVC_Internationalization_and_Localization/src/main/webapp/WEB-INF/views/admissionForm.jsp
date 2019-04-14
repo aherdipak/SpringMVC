@@ -6,12 +6,17 @@
 <title>success</title>
 </head>
 <body>
+
+<!-- if i click on this link this webpage again request for it self and along with that request it sends parameter name siteLanguage to the server-->
+<a href="./getAdmissionFormPage.htm?siteLanguage=en">English</a> |
+<a href="./getAdmissionFormPage.htm?siteLanguage=fr">French</a>
+
 	<h1>${headerMsg}</h1>
 	<h1>STUDENT ADMISSION FORMFOR ENGINEERING COURSE</h1>
 
 <form:errors path="student.*"/>
 
-	<form action="/FirstMVC/submitStudentAdmissionForm.htm" method="post">
+	<form action="./submitStudentAdmissionForm.htm" method="post">
 
 		<table>
 			<tr>
