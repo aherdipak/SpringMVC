@@ -82,6 +82,40 @@ return "NullPointerException";
 
 ```
 
+When user request to the Admission Form page this request handling method throw NullPointerException and And immediately after that springmvc framework started looking for a method In the same controller class which has an `@ExceptionHandler` annotation on top of it and value as `NullPointerException.class`
+
+Some important point to notice:
+
+This controller class we are handling only NullPointerException So if request handling method throws any other exception at runtime while processing The request like IoException, ArthmeticException means exception for which We have not put any exception handler method the application gonna send the default Error webpage to the user as a response as we sow in a NullPointerException
+
+```
+@ExceptionHandler(value = IOException.class)
+public String handleIoException(Exception e){
+	System.out.println("IO Exception Occured: "+e);
+	return "IOException";
+}
+
+```
+
+##### /IOException.jsp
+
+```
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<html>
+<head>
+<title>success</title>
+</head>
+<body>
+
+	<h1>${headerMsg}</h1>
+	<h1>STUDENT ADMISSION FORM FOR ENGINEERING COURSE</h1>
+	
+	<p>The application has encountered a Input Output error. Please contact support by sending an email at webmaster@dac.com</p>
+
+</body>
+</html>
+```
 
 ### Question 1: 
 #### Whatever value provided in a student hobby field that values minimum length of 2 chars and never exceeds 30 chars and if the user violates this rule at a time of submitting the form then my spring application return the same form back to the client with a complete description of the violated rule, How to achieve such things?
