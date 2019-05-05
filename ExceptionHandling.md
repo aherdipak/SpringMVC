@@ -1,5 +1,51 @@
 ## Exception Handling 01
 
+use : SpringMVC_ExceptionHandling
+
+In general what happens when your springMVC application throws some ```xyz``` Exception without any code to handle that.
+
+Let's check it out.
+
+When a user request for this url ```http://localhost:8081/SpringMVC_ExceptionHandling/getStudentAdmissionFormPage.htm```
+
+The belove method in AdmissionController class gets executed and webpage sends to the user As a response.
+
+```
+@RequestMapping(value="/getStudentAdmissionFormPage.htm", method=RequestMethod.GET)
+public ModelAndView getStudentAdmissionFormPage() {
+	ModelAndView modelAndView = new ModelAndView("studentAdmissionForm");
+	modelAndView.addObject("headerMsg", "Enginnering College,India");
+	return modelAndView;
+}
+```
+And if everything goes fine on server while processing this request user will get `studentAdmissionForm` webpage as a response.
+
+Now, due to some developer mistake or some other reason if while processing the request, request handling method throws some exception, say NullPointerException, ResourceNotFoudound or any other. what's gonna happen What user wanna gets In that case as a response.
+
+As example: 
+
+Bellow method throws NullPointerException for above request.
+
+```
+	@RequestMapping(value="/getStudentAdmissionFormPage.htm", method=RequestMethod.GET)
+	public ModelAndView getStudentAdmissionFormPage() {
+		
+		String exceptionOccured = "NULL_POINTER";
+		if(exceptionOccured.equalsIgnoreCase("NULL_POINTER")) {
+			throw new NullPointerException("Null Pointer Exception");
+		}
+		
+		ModelAndView modelAndView = new ModelAndView("studentAdmissionForm");
+		modelAndView.addObject("headerMsg", "Enginnering College,India");
+		return modelAndView;
+	}
+	 
+```
+
+Imp point to notice No ware in this code I am handling NullPointerException.
+
+
+
 ### Question 1: 
 #### Whatever value provided in a student hobby field that values minimum length of 2 chars and never exceeds 30 chars and if the user violates this rule at a time of submitting the form then my spring application return the same form back to the client with a complete description of the violated rule, How to achieve such things?
 
