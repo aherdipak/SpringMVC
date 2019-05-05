@@ -44,6 +44,43 @@ Bellow method throws NullPointerException for above request.
 
 Imp point to notice No ware in this code I am handling NullPointerException.
 
+Now I would request for admission form.
+What's gonna happen, what I would get as a response?
+It has sent bellow error page
+
+![image](https://user-images.githubusercontent.com/35020560/57191396-b82d1e00-6f42-11e9-8c35-76181911bdd0.png)
+
+
+On this page its talking about two imp points.
+On top it has mention HTTP Status code 500,Then the brief description of the error which occurred on the server.
+
+Normally when any exception occurs for which there is no exception handling code return in the controller class Then the application by default sends an error page like above image.
+
+Now many times developers would like to send customized error web page Instead of this default error page which doesn't seem so much user friendly.
+
+### Question 1: 
+
+#### So the question is what task I need to perform in this application so that I would be able to send customized Error webpage when this method would throw null pointer exception while processing the request?
+
+Guy's to tackle with this requirement I just need to perform these two simple steps And I will be done.
+
+
+```markdown
+1. Include a JSP page NullPointerException.jsp
+2. Include a method with @ExceptionHandler annotation on its top as shown below:
+
+@ExceptionHandler(value = NullPointerException.class)
+public String handleNullPointerException(Exception e){
+
+// logging Null Pointer Exception
+System.out.println("Null Pointer Exception Occured: "+e);
+
+return "NullPointerException";
+
+
+}
+
+```
 
 
 ### Question 1: 
