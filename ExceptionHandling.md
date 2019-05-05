@@ -117,64 +117,36 @@ public String handleIoException(Exception e){
 </html>
 ```
 
-### Question 1: 
-#### Whatever value provided in a student hobby field that values minimum length of 2 chars and never exceeds 30 chars and if the user violates this rule at a time of submitting the form then my spring application return the same form back to the client with a complete description of the violated rule, How to achieve such things?
+Now the important point to not here is your controller class might throw a lot off Exceptions at runtime and it may not convenient so to write exception handler method For each exception.
 
-##### \Student.java
-```
-public class Student {
+### Question 2:
+#### So to tackle such a problem what we do, we can add a generic exception handling method In this controller class, such that when this controller class throws some exception for which Speingmvc doesn't find related exception handler method, then it would go and search for Generic exception handler method And if it finds then it would simply go and execute that. So the question is how we would add such method in the controller class?
 
-	private String studentName;
-	
-	@Size(min=2,max=30) // with this annotation on top of this field 
-	// WE simply conveying message 
-	// hey spring mvc framework whenever you performing data bainding task
-	// for studenthobby field and the value which is being with it 
-	// value having less than 2 and more than 30 then you simply treet that as data binding error and put that into Databiding eror ref
-	// To activate this annotation you have put @Valid annotation in controller before @ModelAttribute
-	private String studenthobby;
-	
-	private Long mobileNumber;
-	private Date dob;
-	private List<String> skills;
-	
-	private Address studentAddress;
-	
-	// getter & setter
-}
 ```
-##### \FormValidationController.java
-```
-@Controller
-public class FormValidationController {
-	
-	
-	@RequestMapping(value="/getStudentAdmissionFormPage.htm", method=RequestMethod.GET)
-	public ModelAndView getStudentAdmissionFormPage() {
-		ModelAndView modelAndView = new ModelAndView("studentAdmissionForm");
-		modelAndView.addObject("headerMsg", "Enginnering College,India");
-		return modelAndView;
-	}
-	
-	// if we dont put @Valid thenspring mvc completely ignore form validation anotations kept in student class
-	@RequestMapping(value="/submitStudentAdmissionForm.htm", method=RequestMethod.POST)
-	public ModelAndView submitStudentAdmissionForm(@Valid @ModelAttribute("student") Student student, BindingResult result) {
-		
-		if(result.hasErrors()) {
-			ModelAndView modelAndView = new ModelAndView("studentAdmissionForm");
-			return modelAndView;
-		}
-		
-		ModelAndView modelAndView = new ModelAndView("admissionSuccessNew");
-		
-		modelAndView.addObject("headerMsg", "Enginnering College,India");
-		modelAndView.addObject("msg", "Form Submitted by Name: "+ student.getStudentName() +" Hobby: "+student.getStudenthobby());
-		
-		return modelAndView;
-	}
+@ExceptionHandler(value = Exception.class)
+public String handleException(Exception e){
+	System.out.println("IO unknown Occured: "+e);
+	return "Exception";
 
 }
+```
+##### /Exception.jsp
 
 ```
-##### @Valid 
-With this annotation, we simply instructing spring MVC framework hey spring MVC framework whenever you performing data binding task for this student obj. it's only that time you consider all those form validation related annotation which are kept in student class So the idea is very clear if we put @Valid here then and only then spring MVC framework will consider form validation annotations.
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<html>
+<head>
+<title>success</title>
+</head>
+<body>
+
+	<h1>${headerMsg}</h1>
+	<h1>STUDENT ADMISSION FORM FOR ENGINEERING COURSE</h1>
+	
+	<p>The application has encountered a unknown error. Please contact support by sending an email at webmaster@dac.com</p>
+
+</body>
+</html>
+```
+
