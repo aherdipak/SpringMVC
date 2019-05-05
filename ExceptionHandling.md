@@ -1,6 +1,6 @@
 ## Exception Handling 01
 
-Refer : SpringMVC_ExceptionHandling
+Refer Example : SpringMVC_ExceptionHandling
 
 In general what happens when your springMVC application throws some ```xyz``` Exception without any code to handle that.
 
