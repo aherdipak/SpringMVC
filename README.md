@@ -43,5 +43,9 @@ You will learn about
     Example:
      **`springMVC_RequestMapping_RequestParam`**
      
+
+     Example:
+      * Directory Name --> `springMVC_RequestMapping_RequestParam`
+     
 *  `5.@ModelAttribute.md`  : ModelAttribute annotation in Spring MVC
 *  `6.DataBinding.md`  : Forms - Data Binding with Date, Collection (Arraylist), Long etc
