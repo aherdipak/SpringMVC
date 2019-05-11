@@ -20,7 +20,7 @@ public ModelAndView getStudentAdmissionFormPage() {
 ```
 And if everything goes fine on server while processing this request user will get `studentAdmissionForm` webpage as a response.
 
-Now, due to some developer mistake or some other reason if while processing the request, request handling method throws some exception, say NullPointerException, ResourceNotFoudound or any other. what's gonna happen What user wanna gets In that case as a response.
+Now, due to some developer mistake or some other reason if while processing the request, request handling method throws some exception, say NullPointerException, ResourceNotFoudound or any other. what's gonna happen? What user wanna gets In that case as a response?
 
 As example: 
 
