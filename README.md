@@ -70,10 +70,11 @@ You will learn about
       Example:
       
           Directory Name -->  SpringMVC_FormValidation
-          
-          
-    *  `9. Interceptor.md`  :  Interceptor ( Introduction with a hands on session )
+       
+ *  `9. Interceptor.md`  : Interceptor ( Introduction with a hands on session )
 
       Example:
       
           Directory Name -->  Interceptor
+          
+   
