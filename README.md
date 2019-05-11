@@ -46,11 +46,13 @@ You will learn about
 *  `5.@ModelAttribute.md`  : ModelAttribute annotation in Spring MVC
 
       Example:
+      
        *  Directory Name -->  **`SpringMVC_ModelAttribute`**
 
 *  `6.DataBinding.md`  : Forms - Data Binding with Date, Collection (Arraylist), Long etc.
 
-      Example:
+      Example: 
+      
         *  Directory Name -->  **`SpringMVC_Custum_DataBinding`**
 
 
