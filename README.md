@@ -26,26 +26,22 @@ You will learn about
 *  `1.First SpringMVC Web Application.md`  : Creating SpringMVC Web Application
 
    Example:
-   **`springMVC_RequestMapping_RequestParam`**
+      * Directory Name -->  **`springMVC_RequestMapping_RequestParam`**
 
 *  `2.@RequestMapping.md`  : Request handling at class level amd method level in spring MVC
 
     Example:
-   **`springMVC_RequestMapping_RequestParam`**
+      * Directory Name -->  **`springMVC_RequestMapping_RequestParam`**
 
 *  `3.@PathVariable.md`  : PathVariable annotation in Spring MVC
-  
-    Example:
-     **`SpringMVC_PathVariable`**
+     
+     Example:
+      * Directory Name -->   **`SpringMVC_PathVariable`**
 
 *  `4.@RequestParam.md`  : RequestParam annotation in Spring MVC
 
-    Example:
-     **`springMVC_RequestMapping_RequestParam`**
-     
-
      Example:
-      * Directory Name --> `springMVC_RequestMapping_RequestParam`
+      * Directory Name -->  **`springMVC_RequestMapping_RequestParam`**
      
 *  `5.@ModelAttribute.md`  : ModelAttribute annotation in Spring MVC
 *  `6.DataBinding.md`  : Forms - Data Binding with Date, Collection (Arraylist), Long etc
