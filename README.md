@@ -9,6 +9,7 @@ You will learn about
 - Forms - DataBinding, Validation
 - Annotation based approach - @RequestParam, @PathVariable, @ModelAttribute etc
 - Internationalization
+- Themes
 - Exception Handling
 - Basic REST Services
 
