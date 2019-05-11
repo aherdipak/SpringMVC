@@ -1,4 +1,4 @@
-package com.dac.exception;
+/*package com.dac.exception;
 
 import java.io.IOException;
 
@@ -29,3 +29,4 @@ public class GlobalExceptionHandlerMethods {
 	}
 	
 }
+*/

@@ -28,6 +28,23 @@
 	</bean>
 	
 	
+	<bean id="simpleMappingExceptionResolver" 
+	class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<map>
+				<entry key="NullPointerException" value="NullPointerException"/>
+				<entry key="IOException" value="IOException"/>
+			</map>
+		</property>
+		
+		<!-- This is the default error webpage on the generic error webpage -->
+		<property name="defaultErrorView" value="Exception"/>
+		
+		<!-- Name of logger to use to log exception unset by default, so logging disabled -->
+		<property name="warnLogCategory" value="MVClogger"/>
+		
+	</bean>
+	
 	
 	 <bean id="messageSource"
 		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
