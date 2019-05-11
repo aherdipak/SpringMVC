@@ -24,7 +24,7 @@ Now, due to some developer mistake or some other reason if while processing the 
 
 As example: 
 
-Bellow method throws NullPointerException for above request.
+Bellow method throws NullPointerException for above URL request.
 
 ```
 	@RequestMapping(value="/getStudentAdmissionFormPage.htm", method=RequestMethod.GET)
@@ -42,7 +42,7 @@ Bellow method throws NullPointerException for above request.
 	 
 ```
 
-Imp point to notice No ware in this code I am handling NullPointerException.
+Important point to notice No here in this code I am not handling NullPointerException.
 
 Now I would request for admission form.
 What's gonna happen, what I would get as a response?
@@ -83,6 +83,28 @@ return "NullPointerException";
 ```
 
 When user request to the Admission Form page this request handling method throw NullPointerException and And immediately after that springmvc framework started looking for a method In the same controller class which has an `@ExceptionHandler` annotation on top of it and value as `NullPointerException.class`
+
+##### /NullPointerException.jsp
+
+```
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<html>
+<head>
+<title>success</title>
+</head>
+<body>
+
+	<h1>${headerMsg}</h1>
+	<h1>STUDENT ADMISSION FORM FOR ENGINEERING COURSE</h1>
+	
+	<p>The application has encountered a Null Pointer error. Please contact support by sending an email at webmaster@dac.com</p>
+
+</body>
+</html>
+
+```
+
 
 Some important point to notice:
 
