@@ -77,4 +77,10 @@ You will learn about
       
           Directory Name -->  Interceptor
           
+   *  `10. Internationalization_Localization .md`  : Make an SpringMVC application to support multiple languages.
+
+      Example:
+      
+          Directory Name -->  SpringMVC_Internationalization_and_Localization
+          
    
