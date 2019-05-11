@@ -219,3 +219,39 @@ If you observer each method in this class what you are doing we are first loggin
 
 This is what we are doing in all exception handler methods.
 
+Now SpringMVC says hey developers if you have to perform just these to task in each exception handler method then you really don't need to write such big java class in your application and you can perform all such handling task by writing a very simple bean definition in your spring configuration file.
+
+#### /dispatcher-servlet.xml
+```
+
+<bean id="simpleMappingExceptionResolver" 
+	class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<map>
+				<entry key="NullPointerException" value="NullPointerException"/>
+				<entry key="IOException" value="IOException"/>
+			</map>
+		</property>
+		
+		<!-- This is the default error webpage on the generic error webpage -->
+		<property name="defaultErrorView" value="Exception"/>
+		
+		<!-- Name of logger to use to log exception unset by default, so logging disabled -->
+		<property name="warnLogCategory" value="MVClogger"/>
+		
+</bean>
+
+```
+
+SO this bean definition is exactly doing the same thing as what `GlobalExceptionHandlerMethods` class is performing.
+
+let me explain,
+
+
+With this bean definition, we are instruction SpringMVC hey SpringMVC when any of the controller class throw a NullPointerException just return `NullPointerException` view name exactly like`handleNullPointerException(Exception e)`  exception handling method. And IoException thrown by any of the controller class in application just return `IOException` view name. exactly like `handleIoException(Exception e)` this exception handling method. and when any of the controller class throw some exception which is not present in this above bean definition. just return as `defaultErrorView` and `exception` view name. Exactly like `handleException(Exception e)` this exception handling method.
+
+Now if you observe we are logging info of thrown exception before returning view name. that's something we are doing with the help of belove property definition `warnLogCategory` with this we are instructing SpringMVC hey SpringMVC before returning customized view page to the client's browser just log the info of the thrown exception exactly we are going in each exception handler method.
+
+
+
+
