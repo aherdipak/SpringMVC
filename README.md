@@ -34,6 +34,10 @@ You will learn about
    **`springMVC_RequestMapping_RequestParam`**
 
 *  `3.@PathVariable.md`  : PathVariable annotation in Spring MVC
+  
+    Example:
+     **`SpringMVC_PathVariable`**
+
 *  `4.@RequestParam.md`  : RequestParam annotation in Spring MVC
 
     Example:
