@@ -27,33 +27,24 @@ public class AdmissionController {
 	}
 	 
 	
-	@ExceptionHandler(value = NullPointerException.class)
-	public String handleNullPointerException(Exception e){
-
-	// logging Null Pointer Exception
-	System.out.println("Null Pointer Exception Occured: "+e);
-
-	return "NullPointerException";
-
+/*	@ExceptionHandler(value = NullPointerException.class)
+	public String handleNullPointerException(Exception e) {
+		// logging Null Pointer Exception
+		System.out.println("Null Pointer Exception Occured: " + e);
+		return "NullPointerException";
 	}
-	
+
 	@ExceptionHandler(value = IOException.class)
-	public String handleIoException(Exception e){
-
-	System.out.println("IO Exception Occured: "+e);
-
-	return "IOException";
-
+	public String handleIoException(Exception e) {
+		System.out.println("IO Exception Occured: " + e);
+		return "IOException";
 	}
-	
-	
+
 	@ExceptionHandler(value = Exception.class)
-	public String handleException(Exception e){
+	public String handleException(Exception e) {
+		System.out.println("IO unknown Occured: " + e);
+		return "Exception";
 
-	System.out.println("IO unknown Occured: "+e);
-
-	return "Exception";
-
-	}
+	}*/
 
 }
