@@ -172,3 +172,50 @@ public String handleException(Exception e){
 </html>
 ```
 
+## Exception Handling 02
+
+Guys The only drawback what approach you learn so far is an exception handler method is applicable only to the controller class, where it is present and it is not be applied or used by the framework for exceptions thrown by other controller classes so what it means?
+
+Let's say in your application you have 10 controller classes and for each controller class, you want to handle  NullPointerException with this approach you will need to include an exception handler method for  NullPointerException in each of 10 controller classes separately.
+
+
+So the kind of approve we have learned so far we might end up by adding a lot of redundant exceptionHandler methods in our controller classes. 
+So is there any way that we could write an exception handler method for NullPointerException, Only at one place applies to all controller classes which are present in the application?
+
+Yes, there is a way?
+SpringMVC says hey developers you include a class in your application with `@ControllerAdvice` annotation on top of it. Then whatever exception handler methods you put in such class all those would be applied to all controller classes which stays in the application.
+
+##### /GlobalExceptionHandlerMethods.java
+```
+
+@ControllerAdvice
+public class GlobalExceptionHandlerMethods {
+
+	@ExceptionHandler(value = NullPointerException.class)
+	public String handleNullPointerException(Exception e) {
+		// logging Null Pointer Exception
+		System.out.println("Null Pointer Exception Occured: " + e);
+		return "NullPointerException";
+	}
+
+	@ExceptionHandler(value = IOException.class)
+	public String handleIoException(Exception e) {
+		System.out.println("IO Exception Occured: " + e);
+		return "IOException";
+	}
+
+	@ExceptionHandler(value = Exception.class)
+	public String handleException(Exception e) {
+		System.out.println("IO unknown Occured: " + e);
+		return "Exception";
+
+	}
+	
+}
+```
+
+###### Important point: 
+If you observer each method in this class what you are doing we are first logging information, thrown exception and then returning view name.
+
+This is what we are doing in all exception handler methods.
+
