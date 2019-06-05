@@ -36,5 +36,4 @@ public class StudentAdmissionController {
 	   list.add(std4);
 	   return list;
 	 }
-	
 }
