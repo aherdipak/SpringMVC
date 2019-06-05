@@ -7,7 +7,6 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
-import com.dac.custom.validation.IsValidHobby;
 import com.dac.custom.validation.IsValidParameterHobby;
 
 public class Student {
