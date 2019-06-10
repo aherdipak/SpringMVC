@@ -3,29 +3,22 @@ package com.dac.web.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.websocket.server.PathParam;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.dac.web.beans.Student;
 
-@Controller
-public class StudentAdmissionController {
+//@Controller
+@RestController
+public class RestApiController {
 
-	@RequestMapping(value = "/getAdmissionForm.html", method = RequestMethod.GET)
-	public ModelAndView getStudentadmissionForm() {
-		ModelAndView model = new ModelAndView("admissionForm");
-		return model;
-	}
+	//************* Retrieving All students records ***************************
 	
-/*	//************* Retrieving All students records ****************************
-	
-	 @ResponseBody // to convert java object to JSON String 
+	 //@ResponseBody  
 	 @RequestMapping(value= "/student", method=RequestMethod.GET)
 	 public List<Student> getStudentList(){
 
@@ -43,7 +36,7 @@ public class StudentAdmissionController {
 	 }
 	 
 	 //************* Retrieving  student record ****************************
-	 @ResponseBody  
+	// @ResponseBody  
 	 @RequestMapping(value= "/student/{name}", method=RequestMethod.GET)
 	 public Student getStudent(@PathVariable("name") String studentName) {
 		 
@@ -53,7 +46,6 @@ public class StudentAdmissionController {
 		 student.setHobby("WWE");
 		 System.out.println(studentName);
 		 return student;
-	 }*/
-	 
-	 
+	 }
+	
 }
