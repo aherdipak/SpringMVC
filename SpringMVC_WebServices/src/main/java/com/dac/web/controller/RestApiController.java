@@ -3,8 +3,10 @@ package com.dac.web.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -19,7 +21,7 @@ public class RestApiController {
 	//************* Retrieving All students records ***************************
 	
 	 //@ResponseBody  
-	 @RequestMapping(value= "/student", method=RequestMethod.GET)
+	 @RequestMapping(value= "/student", method=RequestMethod.GET,produces=MediaType.APPLICATION_XML_VALUE)
 	 public List<Student> getStudentList(){
 
 	   Student std1 = new Student("Mahatma gandhi");
@@ -37,7 +39,7 @@ public class RestApiController {
 	 
 	 //************* Retrieving  student record ****************************
 	// @ResponseBody  
-	 @RequestMapping(value= "/student/{name}", method=RequestMethod.GET)
+	 @RequestMapping(value= "/student/{name}", method=RequestMethod.GET,produces=MediaType.APPLICATION_JSON_VALUE)
 	 public Student getStudent(@PathVariable("name") String studentName) {
 		 
 		 // fetch the student's record using studentName from the DB
@@ -47,5 +49,22 @@ public class RestApiController {
 		 System.out.println(studentName);
 		 return student;
 	 }
+	 
+	 //************* Update  student record ****************************
+		// @ResponseBody  
+		 @RequestMapping(value= "/student/{name}", method=RequestMethod.PUT)
+		 public boolean updateStudent(@PathVariable("name") String studentName,@RequestBody Student student) {
+			 
+			 System.out.println("Student Name: "+studentName);
+			 System.out.println("Student Name: "+student.getName() +"Student Hobby: "+student.getHobby());
+			 
+			 // find the matching student record using "StudentName" from the DB
+			 // update the matching student record with the information of student sent by the client
+			 // return true if update is successfully done and return false if update is not done successfully
+			 
+			 return true;
+		 }
+	 
+	 
 	
 }
