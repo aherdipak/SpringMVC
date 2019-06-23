@@ -52,18 +52,20 @@ public class RestApiController {
 	 
 	 //************* Update  student record ****************************
 		// @ResponseBody  
-		 @RequestMapping(value= "/student/{name}", method=RequestMethod.PUT)
-		 public boolean updateStudent(@PathVariable("name") String studentName,@RequestBody Student student) {
-			 
-			 System.out.println("Student Name: "+studentName);
-			 System.out.println("Student Name: "+student.getName() +"Student Hobby: "+student.getHobby());
-			 
-			 // find the matching student record using "StudentName" from the DB
-			 // update the matching student record with the information of student sent by the client
-			 // return true if update is successfully done and return false if update is not done successfully
-			 
-			 return true;
-		 }
+	@RequestMapping(value = "/student/{name}", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public boolean updateStudent(@PathVariable("name") String studentName, @RequestBody Student student) {
+
+		System.out.println("Student Name: " + studentName);
+		System.out.println("Student Name: " + student.getName() + "Student Hobby: " + student.getHobby());
+
+		// find the matching student record using "StudentName" from the DB
+		// update the matching student record with the information of student sent by
+		// the client
+		// return true if update is successfully done and return false if update is not
+		// done successfully
+
+		return true;
+	}
 	 
 	 
 	
