@@ -3,7 +3,10 @@ package com.dac.web.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -53,7 +56,7 @@ public class RestApiController {
 	 //************* Update  student record ****************************
 		// @ResponseBody  
 	@RequestMapping(value = "/student/{name}", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public boolean updateStudent(@PathVariable("name") String studentName, @RequestBody Student student) {
+	public ResponseEntity<Boolean> updateStudent(@PathVariable("name") String studentName, @RequestBody Student student) {
 
 		System.out.println("Student Name: " + studentName);
 		System.out.println("Student Name: " + student.getName() + "Student Hobby: " + student.getHobby());
@@ -63,10 +66,23 @@ public class RestApiController {
 		// the client
 		// return true if update is successfully done and return false if update is not
 		// done successfully
-
-		return true;
+		
+		return new ResponseEntity<Boolean>(false,HttpStatus.NOT_FOUND);
 	}
 	 
+	@RequestMapping(value = "/student2/{name}", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Boolean> updateStudent2(@PathVariable("name") String studentName, @RequestBody Student student) {
+
+		System.out.println("Student Name: " + studentName);
+		System.out.println("Student Name: " + student.getName() + "Student Hobby: " + student.getHobby());
+
+		HttpHeaders headers = new HttpHeaders();
+		headers.add("Key1", "Value1");
+		headers.add("Key2", "Value2");
+		headers.add("Key3", "Value3");	
+		
+		return new ResponseEntity<Boolean>(false,headers,HttpStatus.OK);
+	}
 	 
 	
 }
