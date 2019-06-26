@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.dac.web.beans.Student;
 
@@ -82,6 +83,22 @@ public class RestApiController {
 		headers.add("Key3", "Value3");	
 		
 		return new ResponseEntity<Boolean>(false,headers,HttpStatus.OK);
+	}
+	
+	// ********** Posting a student Record *****************
+	@RequestMapping(value = "/addStudent", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Boolean> postStudent(@RequestBody Student student) {
+		System.out.println("Student Name: " + student.getName() + "Student Hobby: " + student.getHobby());
+		// insert the student record into the database
+
+		HttpHeaders headers = new HttpHeaders();
+		headers.add("Location", 
+					ServletUriComponentsBuilder.fromCurrentRequest()
+					.path("/{name}")
+					.buildAndExpand(student.getName()).toUri()
+					.toString());
+		
+		return new ResponseEntity<Boolean>(true, headers,HttpStatus.CREATED);
 	}
 	 
 	
