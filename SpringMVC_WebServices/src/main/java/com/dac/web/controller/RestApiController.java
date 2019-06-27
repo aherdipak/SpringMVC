@@ -101,5 +101,22 @@ public class RestApiController {
 		return new ResponseEntity<Boolean>(true, headers,HttpStatus.CREATED);
 	}
 	 
+	// ********** Deleting a student Record *****************
+		@RequestMapping(value = "/deleteStudent/{name}", method = RequestMethod.DELETE)
+		public ResponseEntity<Boolean> deleteStudent(@PathVariable("name") String name) {
+			System.out.println("Student Name: " + name);
+			// delete the student record from the database
+			
+			return new ResponseEntity<Boolean>(true,HttpStatus.OK);
+		}
 	
+		// ********** Deleting all student Record *****************
+				@RequestMapping(value = "/deleteAllStudent", method = RequestMethod.DELETE)
+				public ResponseEntity<Boolean> deleteAllStudent() {
+					
+					// delete All students record from the database
+					
+					return new ResponseEntity<Boolean>(true,HttpStatus.OK);
+				}
+			
 }
