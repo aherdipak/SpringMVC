@@ -36,16 +36,15 @@
 			<td>Student Skills:</td>
 			<td>${student.skills}</td>
 		</tr>
-		
+
 		<tr>
 			<td>Student Address:</td>
 			<td>country:${student.studentAddress.country}
 				city:${student.studentAddress.city}
 				street:${student.studentAddress.street}
-				pinCode:${student.studentAddress.pinCode}
-			</td>
+				pinCode:${student.studentAddress.pinCode}</td>
 		</tr>
-		
+
 	</table>
 
 </body>

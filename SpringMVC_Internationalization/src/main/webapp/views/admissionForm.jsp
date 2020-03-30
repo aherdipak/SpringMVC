@@ -1,0 +1,105 @@
+
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<html>
+<head>
+<title>success</title>
+ <script type="text/javascript" src="<%=request.getContextPath()%>/js/i18n/app.js.message-<%= request.getParameter("siteLanguage") %>.js"></script>
+</head>
+<body>
+
+<!-- if i click on this link this webpage again request for it self and along with that request it sends parameter name siteLanguage to the server-->
+<a href="./getAdmissionFormPage.htm?siteLanguage=en">English</a> |
+<a href="./getAdmissionFormPage.htm?siteLanguage=fr">French</a>
+
+	<h1>${headerMsg}</h1>
+	<h1><spring:message code="form.name"/></h1>
+
+<form:errors path="student.*"/>
+
+	<form action="./submitStudentAdmissionForm.htm" method="post">
+
+		<table>
+			<tr>
+				<td><spring:message code="label.studentName"/></td>
+				<td><input type="text" name="studentName"></td>
+			</tr>
+			<tr>
+				<td><spring:message code="label.studenthobby"/></td>
+				<td><input type="text" name="studenthobby"></td>
+			</tr>
+			
+			<tr>
+				<td><spring:message code="label.mobileNumber"/></td>
+				<td><input type="text" name="mobileNumber"></td>
+			</tr>
+			
+			<tr>
+				<td><spring:message code="label.dob"/></td>
+				<td><input type="text" name="dob"></td>
+			</tr>
+			
+			<tr>
+				<td><spring:message code="label.skills"/></td>
+				<td><select name="skills" multiple>
+					<option value="core java">core java</option>
+					<option value="Spring">Spring</option>
+					<option value="hibernate">hibernate</option>
+					</select></td>
+			</tr>
+			
+		</table>
+		
+		<h3><spring:message code="label.address"/></h3>
+		<!-- SPRING MVC WILL AUTOMATICALLY BIND  THIS studentAddress.country FORM ELEMENTS VALUE WITH COUNTRY PROPERTY OF studentAddress PROPERTY -->
+		<!-- LIKE THIS SPRING MVC WILLBIND THESE OTHER ALL FORM PEOPERTY ELEMENTS WITHITS CORRESPONDINNG  PROPERTY OF studentAddress PROPERTY  -->
+		<table>
+			<tr>
+				<td><spring:message code="label.country"/></td>
+				<td><input type="text" name="studentAddress.country"></td>
+			</tr>
+			<tr>
+				<td><spring:message code="label.city"/></td>
+				<td><input type="text" name="studentAddress.city"></td>
+			</tr>
+			
+			<tr>
+				<td> <spring:message code="label.street"/></td>
+				<td><input type="text" name="studentAddress.street"></td>
+			</tr>
+			
+			<tr>
+				<td><spring:message code="label.pinCode"/></td>
+				<td><input type="text" name="studentAddress.pinCode"></td>
+			</tr>
+			<tr>
+				<td>-------------------</td>
+				<td>-------------------</td>
+			</tr>	
+			<tr>
+				<td>NAME</td>
+				<td id="name"></td>
+			</tr>
+			<tr>
+				<td>EDUCATION</td>
+				<td id="education"></td>
+			</tr>
+			<tr>
+				<td>CITY</td>
+				<td id="city"></td>
+			</tr>
+		</table>
+		<input type="submit" value="Click !!!">
+	</form>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#name').text(errMsgMap.name);
+    $('#education').text(errMsgMap.education);
+    $('#city').text(errMsgMap.city);
+});
+
+</script>
+</html>
