@@ -88,6 +88,10 @@
 				<td>CITY</td>
 				<td id="city"></td>
 			</tr>
+			
+			
+			<h1>${ServerError}</h1>
+			
 		</table>
 		<input type="submit" value="Click !!!">
 	</form>
